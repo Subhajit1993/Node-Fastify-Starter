@@ -5,45 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-
+Hello World
 </body>
 <script>
-    function onScriptLoad(){
-        var config = {
-            "root": "",
-            "flow": "DEFAULT",
-            merchant:{
-                redirect: false,
-                name: 'Merchant name'
-            },
-            "data": {
-                "orderId": "order_1622166472", /* update order id */
-                "tokenType": "TXN_TOKEN",
-                "token": "c5f1d35b4494439daf5dd0ab697e1d5f1622166472724",
-                "amount":"123"
-            },
-            "handler": {
-                "notifyMerchant": function(eventName,data){
-                    console.log("data => ",data);
-                },
-                transactionStatus:function(data){
-                    console.log("payment status ", data);
-                }
-            }
-        };
-
-        if(window.Paytm && window.Paytm.CheckoutJS){
-            window.Paytm.CheckoutJS.onLoad(function excecuteAfterCompleteLoad() {
-                // initialze configuration using init method
-                window.Paytm.CheckoutJS.init(config).then(function onSuccess() {
-                    // after successfully updating configuration, invoke JS Checkout
-                    window.Paytm.CheckoutJS.invoke();
-                }).catch(function onError(error){
-                    console.log("error => ",error);
-                });
-            });
-        }
-    }
 </script>
-<script type="application/javascript" src="https://securegw-stage.paytm.in/merchantpgpui/checkoutjs/merchants/Dwelli21170445718174.js" onload="onScriptLoad();" crossorigin="anonymous"></script>
 </html>
